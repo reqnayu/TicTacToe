@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac To</title>
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="./img/tic-tac-toe.png">
 
+    <link rel="stylesheet" href="./tarikStrap.css">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script src="./utility.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    
+    <div class="content gc">
+        <div class="wrapper inactive">
+            <button class="start" onclick="start()">Start!</button>
+            <button class="area inactive" onclick="fillField(0)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(1)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(2)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(3)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(4)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(5)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(6)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(7)" onmouseenter="playerHover()"></button>
+            <button class="area inactive" onclick="fillField(8)" onmouseenter="playerHover()"></button>
+            <div id="line-container" class="d-none">
+                <div id="vertical-line-wrapper">
+                    <div id="v1" class="vertical-line"></div>
+                    <div id="v2" class="vertical-line"></div>
+                    <div id="v3" class="vertical-line"></div>
+                </div>
+                <div id="horizontal-line-wrapper">
+                    <div id="h1" class="horizontal-line"></div>
+                    <div id="h2" class="horizontal-line"></div>
+                    <div id="h3" class="horizontal-line"></div>
+                </div>
+                <div id="diagonal-line-wrapper">
+                    <div id="d1" class="diagonal-line"></div>
+                    <div id="d2" class="diagonal-line"></div>
+                </div>
+            </div>
+            <div class="end-screen d-none">
+                <div class="end-card">
+                    <div id="winner"></div>
+                    <button class="restart" onclick="restart()">Nochmal spielen</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
