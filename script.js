@@ -27,12 +27,13 @@ const checkWin = () => {
         if (!fields[one]) continue;
         if (fields[one] == fields[two] && fields[two] == fields[three]) {
             endScreen(line);
+            return;
         };
     }
     if (allFieldsDrawn()) endScreen('', true);
 }
 
-const allFieldsDrawn = () => fields.filter(field => field !== '').length > 8
+const allFieldsDrawn = () => fields.filter(field => field !== '').length == 9
 
 const endScreen = (line, draw = false) => {
     qs('#line-container').classList.toggle('d-none', false);
