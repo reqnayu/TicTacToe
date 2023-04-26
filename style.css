@@ -115,7 +115,7 @@ button {
         linear-gradient(90deg, transparent 44%, var(--blue) 44% 56%, transparent 56%);
     filter: drop-shadow(0px 0px 2px var(--blue));
     opacity: var(--p2-shown);
-    rotate: 45deg;
+    transform: rotate(45deg);
 }
 
 .area.inactive {

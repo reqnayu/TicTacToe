@@ -29,13 +29,15 @@ const checkWin = () => {
             endScreen(line);
         };
     }
-    if (fields.filter(field => field !== '').length > 6) endScreen('', true);
+    if (allFieldsDrawn()) endScreen('', true);
 }
 
+const allFieldsDrawn = () => fields.filter(field => field !== '').length > 8
+
 const endScreen = (line, draw = false) => {
-    qs('#line-container').classList.toggle('d-none');
-    if (line) qs(`#${line}`).classList.toggle('active');
-    setTimeout(()=>vis(qs('.end-screen')), 1000);
+    qs('#line-container').classList.toggle('d-none', false);
+    if (line) qs(`#${line}`).classList.toggle('active', true);
+    setTimeout(()=>vis(qs('.end-screen'), false), 1000);
     if (!draw) {
         qs('#winner').innerText = `Spieler ${currentPlayer} hat Gewonnen!`;
     } else {
